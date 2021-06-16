@@ -19,25 +19,25 @@ public class CILabTest {
     //test no capital letters
     @Test
     public void detectCapitalUseTest1() {
-       myString.setString("yup yup");
+       myString.setString("yupyup");
        boolean capital = myString.detectCapitalUse();
-       assertEquals(true, capital);
+       assertTrue(capital);
     }
 
     //test first letter capital
     @Test
     public void detectCapitalUseTest2() {
-        myString.setString("Yup yup");
+        myString.setString("Yupyup");
         boolean capital = myString.detectCapitalUse();
-        assertEquals(true, capital);
+        assertTrue(capital);
     }
 
     //testing capitals in middle of string
     @Test
     public void detectCapitalUseTest3() {
-        myString.setString("yup YAH yup");
+        myString.setString("yupYAHyup");
         boolean capital = myString.detectCapitalUse();
-        assertEquals(false, capital);
+        assertFalse(capital);
     }
 
     //testing all capitals in string
@@ -45,6 +45,14 @@ public class CILabTest {
     public void detectCapitalUseTest4() {
         myString.setString("YUPYUP");
         boolean capital = myString.detectCapitalUse();
-        assertEquals(true, capital);
+        assertTrue(capital);
+    }
+
+    //test getString to complete coverage
+    @Test
+    public void testGetString() {
+        myString.setString("YUPYUP");
+        String str = myString.getString();
+        assertEquals("YUPYUP",str);
     }
 }
